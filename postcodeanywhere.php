@@ -38,7 +38,7 @@ abstract class postcodeAnywhere {
 	/**
 	 * Set the required language of the postcode request
 	 *
-	 * @param string $sLanguage
+	 * @param string $sLanguage The language we're searching in (Welsh or English)
 	 */
 	public function setLanguage($sLanguage) {
 		$sLanguage = strtolower($sLanguage);
@@ -54,7 +54,8 @@ abstract class postcodeAnywhere {
 	/**
 	 * Set the username of the postcodeanywhere account
 	 *
-	 * @param string $sUsername
+	 * @param string $sUsername The username of the account
+     * 
 	 * @return postcodeanywhere
 	 */
 	public function setUsername($sUsername = null) {
@@ -69,7 +70,8 @@ abstract class postcodeAnywhere {
 	/**
 	 * Set the filter for our returned results.
 	 *
-	 * @param string $sFilter
+	 * @param string $sFilter The search filter to apply (Not fully implemented yet)
+     *
 	 * @return postcodeanywhere
 	 */
 	public function setFilter($sFilter = null) {
@@ -83,9 +85,9 @@ abstract class postcodeAnywhere {
 
 	/**
 	 * Sets the key for the request
-	 * TODO:	Needs better validation
 	 *
-	 * @param string $sKey
+	 * @param string $sKey The licence key of your account
+     
 	 * @return postcodeanywhere
 	 */
 	public function setLicenceKey($sKey) {
@@ -100,7 +102,8 @@ abstract class postcodeAnywhere {
 	/**
 	 * Set the postcodenywhere account code.
 	 *
-	 * @param string $sAccountCode
+	 * @param string $sAccountCode The account code
+     *
 	 * @return postcodeanywhere
 	 */
 	public function setAccountCode($sAccountCode) {
@@ -135,6 +138,7 @@ abstract class postcodeAnywhere {
 	 * Set the house name/number we'll be searching for
 	 *
 	 * @param string $sHouseNameNumber The house name/number to search for
+     *
 	 * @return \postcodeanywhere
 	 * @throws Exception
 	 */
@@ -183,8 +187,8 @@ abstract class postcodeAnywhere {
 	/**
 	 * Sets the object error id and message
 	 *
-	 * @param int $iID
 	 * @param string $sMessage
+     *
 	 * @return postcodeanywhere
 	 */
 	protected function setError($sMessage) {
@@ -194,7 +198,9 @@ abstract class postcodeAnywhere {
 
 	/**
 	 * Sets the currently returned data
-	 * @param array $aData
+     *
+	 * @param array $aData The data returned from PCA
+     *
 	 * @return postcodeanywhere
 	 */
 	protected function setData($aData) {
@@ -223,7 +229,8 @@ abstract class postcodeAnywhere {
 	/**
 	 * Match the address ID with that stored in the object data variable
 	 *
-	 * @param int $iMatchID
+	 * @param int $iMatchID Compare the data array IDs against the required ID
+     *
 	 * @return mixed boolean|array
 	 */
 	public function matchAddressID($iMatchID) {
@@ -239,7 +246,8 @@ abstract class postcodeAnywhere {
 	/**
 	 * Sends the GET request to PostcodeAnywhere
 	 * 
-	 * @param string $sUrl
+	 * @param string $sUrl The URL to retrieve the PCA results from
+     *
 	 * @return boolean
 	 * @throws Exception
 	 */
@@ -311,7 +319,7 @@ class interactiveFind extends postcodeanywhere {
 	/**
 	 * Sets the searchterm the interactive find will look for
 	 * 
-	 * @param string $sSearchTerm
+	 * @param string $sSearchTerm The term to search on
 	 * 
 	 * @return \interactiveFind
 	 */
@@ -516,7 +524,8 @@ class interactiveRetrieveByAddress extends postcodeanywhere {
 	/**
 	 * Sets the address of the address were looking for
 	 * 
-	 * @param string $sAddress
+	 * @param string $sAddress The address to search for
+     *
 	 * @throws Exception
 	 */
 	public function setAddress($sAddress = '') {
@@ -530,7 +539,8 @@ class interactiveRetrieveByAddress extends postcodeanywhere {
 	/**
 	 * Sets the companny name of the address were looking for
 	 * 
-	 * @param string $sCompany
+	 * @param string $sCompany The company name to search for
+     *
 	 * @throws Exception
 	 */
 	public function setCompany($sCompany) {
@@ -624,7 +634,7 @@ class Postcode {
 	/**
 	 * Is the postcode valid?
 	 *
-	 * @param type $sPostcode
+	 * @param type $sPostcode The postcode (UK) to check
 	 *
 	 * @return boolean
 	 */
@@ -635,7 +645,8 @@ class Postcode {
 	/**
 	 * Clean a postcode string
 	 *
-	 * @param string $sPostcode
+	 * @param string $sPostcode The postcode to clean up
+     *
 	 * @return string
 	 */
 	public function cleanPostcode($sPostcode = '') {
