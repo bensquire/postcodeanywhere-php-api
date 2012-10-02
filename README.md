@@ -13,7 +13,7 @@ Implemented Functionality:
 --------------------------
  - Interactive Find (Free)
  - Interactive Find By Postcode (Free)
- - Interactive Retrieve By Address (Free)
+ - Interactive Retrieve By Address (Paid)
  - Interactive Retrieve By ID (Paid)
 
 
