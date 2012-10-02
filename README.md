@@ -1,6 +1,6 @@
 postcodeanywhere-php-api
 ========================
-A PHP library to communicate with the PostCodeAnywhere Online service (SOME URL).
+A PHP library to communicate with the PostCodeAnywhere Online service (http://www.postcodeanywhere.co.uk/).
 
 Using simple OO methods, this project will connect to and parse various services
 exposed by there online service. All of there services require an account, however
