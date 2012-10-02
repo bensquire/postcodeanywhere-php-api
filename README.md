@@ -19,7 +19,12 @@ Implemented Functionality:
 
 Example Code:
 -------------
-	
+	$oPostcode = new interactiveFindByPostcode();
+	$oPostcode->setLicenceKey('9999-9999-9999-9999');
+	$oPostcode->setAccountCode('TESTS99999');
+	$oPostcode->setPostcode('DA1 2EN');
+	$oPostcode->run();
+
 
 Requirements:
 -------------
