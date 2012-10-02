@@ -285,7 +285,7 @@ abstract class postcodeAnywhere {
 			$sValue = trim($sValue);
 			
 			if (strlen($sValue) > 0) {
-				$aUrl[] = $sKey . '=' . $sValue;
+				$aUrl[] = $sKey . '=' . urlencode($sValue);
 			}
 		}
 
@@ -524,7 +524,7 @@ class interactiveRetrieveByAddress extends postcodeanywhere {
 			throw new Exception('Invalid Address String');
 		}
 		
-		$this->sAddress = urlencode($sAddress);
+		$this->sAddress = $sAddress;
 	}
 	
 	/**
@@ -538,7 +538,7 @@ class interactiveRetrieveByAddress extends postcodeanywhere {
 			throw new Exception('Invalid Company String');
 		}
 		
-		$this->sCompany = urlencode($sCompany);
+		$this->sCompany = $sCompany;
 	}
 	
 	
@@ -560,7 +560,6 @@ class interactiveRetrieveByAddress extends postcodeanywhere {
 		$oXML = $this->fetchXML($this->buildUrl());
 
 		//Check for an error
-		file_put_contents('/Users/ben_squire/Desktop/test.txt', $oXML->asXML());
 		if ($oXML->Columns->attributes()->Items == 4 && $oXML->Columns->Column->attributes()->Name == 'Error') {
 			$this->setError((string) $oXML->Rows->Row['Description'] . ' - ' . $oXML->Rows->Row['Cause']);
 			return false;
