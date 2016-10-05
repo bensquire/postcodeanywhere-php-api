@@ -1,3 +1,7 @@
+Note
+====
+This repo has not been maintained in over 4 years, as such it is currently considered deprecated. Sorry.
+
 postcodeanywhere-php-api
 ========================
 A PHP library to communicate with the PostCodeAnywhere Online service (http://www.postcodeanywhere.co.uk/).
